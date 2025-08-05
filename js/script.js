@@ -115,12 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
             modal.style.display = "none";
         }
     });
-});
 
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
     const contactForm = document.getElementById("contactForm");
     const contactSection = document.querySelector(".contact");
     const contactTitle = contactSection.querySelector("h1");
@@ -159,8 +154,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-
-
+    // 申し込みフォームの処理
     const joinForm = document.getElementById("joinForm");
     const successBox = document.getElementById("joinSuccessMessage");
 
@@ -178,4 +172,3 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
-
