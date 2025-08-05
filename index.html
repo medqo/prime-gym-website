@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prime Gym - Transform Your Body</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Montserrat Italic 900 のみを確実に読み込む -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- 共通ヘッダー -->
+    <header>
+      <div class="header">
+        <nav>
+          <a href="index.html"
+            ><img src="img/logo.png" alt="ロゴ" width="140"
+          /></a>
+          <ul class="nav-links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="program.html">PROGRAM</a></li>
+            <li><a href="location.html">LOCATION</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+          </ul>
+          <a href="join.html" class="join-btn">JOIN NOW</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- メインビジュアル -->
+    <section class="hero">
+      <h1>TRANSFORM YOUR BODY,<br />EMPOWER YOUR LIFE</h1>
+      <p>最新設備とプロのトレーナーがあなたをサポート</p>
+    </section>
+    <div class="cta">
+      BE YOUR BEST SELF.<a href="join.html" class="join-btn">JOIN NOW</a>
+    </div>
+
+    <!-- ABOUT US -->
+    <section id="about" class="about">
+      <h2>ABOUT US</h2>
+      <div class="flex">
+        <figure class="image">
+          <img src="img/about.png" alt="" width="464" />
+        </figure>
+        <div class="text">
+          <h3>変わる準備はできていますか？</h3>
+          <p>
+            Prime Gymは、あなたの"最高の自分"を引き出すフィットネスジムです。
+          </p>
+          <p>
+            初心者から上級者まで、一人ひとりの目標に合わせたサポートを提供しています。最新のマシン、専属トレーナー、多彩なプログラムを備え、健康的で継続しやすい環境を整えています。
+          </p>
+          <p>
+            24時間営業・パーソナル指導・栄養サポートで、あなたの理想の体づくりを全力でサポートします。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEMBERSHIP -->
+    <section id="membership" class="membership">
+      <h2>MEMBERSHIP</h2>
+      <p>
+        あなたのライフスタイルや目標に合わせて選べる、柔軟な3つのプランをご用意しています。
+      </p>
+      <p>すべてのプランで24時間ジム利用が可能です。</p>
+
+      <!-- プランカードを JavaScript で自動挿入 -->
+      <div class="card-row" id="planCardsContainer">
+        <div class="card-spacer"></div>
+        <!-- JavaScriptで3枚のカードをここに挿入 -->
+      </div>
+
+      <!-- プラン比較テーブル -->
+      <div class="membership-table-wrapper">
+        <table class="membership-table">
+          <colgroup>
+            <col style="width: 25%" />
+            <col style="width: 25%" />
+            <col style="width: 25%" />
+            <col style="width: 25%" />
+          </colgroup>
+          <tbody>
+            <tr>
+              <td>月額</td>
+              <td>¥7,980</td>
+              <td>¥11,800</td>
+              <td>¥16,800</td>
+            </tr>
+            <tr>
+              <td>24時間ジム利用</td>
+              <td>✔️</td>
+              <td>✔️</td>
+              <td>✔️</td>
+            </tr>
+            <tr>
+              <td>いつでもキャンセル可能</td>
+              <td>✔️</td>
+              <td>✔️</td>
+              <td>✔️</td>
+            </tr>
+            <tr>
+              <td>パーソナルトレーニング</td>
+              <td>-</td>
+              <td>✔️</td>
+              <td>✔️</td>
+            </tr>
+            <tr>
+              <td>グループクラス参加</td>
+              <td>-</td>
+              <td>月2回まで</td>
+              <td>✔️</td>
+            </tr>
+            <tr>
+              <td>ゲスト同伴（月4回）</td>
+              <td>-</td>
+              <td>-</td>
+              <td>✔️</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- モーダル：プランの詳細と申し込みフォーム -->
+    <div id="planModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modalTitle">プラン名</h2>
+        <p id="modalDescription">プランの詳細情報がここに表示されます。</p>
+
+        <form id="modalForm">
+          <label for="name">お名前</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">メールアドレス</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="message">ご要望など（任意）</label>
+          <textarea id="message" name="message" rows="4"></textarea>
+
+          <input type="hidden" id="selectedPlan" name="plan" />
+          <button type="submit">申し込む</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- ACCESS -->
+    <section id="access" class="access-section">
+      <h2>ACCESS</h2>
+      <div class="access-content">
+        <!-- 左：Google Map -->
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.787329280129!2d139.69943541525823!3d35.65910818020092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b5a5a6463f7%3A0x3a2a1bff6358a47!2z5p2x5Lqs6YO95riv5Yy65Zub44GM44KN!5e0!3m2!1sja!2sjp!4v1694500000000"
+            width="100%"
+            height="100%"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+
+        <!-- 右：詳細・連絡先 -->
+        <div class="access-info">
+          <div class="nearby">
+            <h3>NEARBY GYMS</h3>
+            <hr />
+            <p>
+              <strong>PRIME GYM TOKYO</strong><br />
+              〒123-0001 東京都渋谷区渋谷1-2-3<br />
+              ☎ 0120-107-929
+            </p>
+            <a href="location.html" class="btn">VIEW ALL GYMS</a>
+          </div>
+
+          <div class="contact-links">
+            <h3>CONTACT US</h3>
+            <ul class="contact-icons">
+              <li>
+                <img src="img/icon_email.png" alt="Email" />
+                <a href="contact.html">お問い合わせ</a>
+              </li>
+              <li>
+                <img src="img/icon_facebook.png" alt="Facebook" />
+                <a href="#">Facebook</a>
+              </li>
+              <li>
+                <img src="img/icon_instagram.png" alt="Instagram" />
+                <a href="#">Instagram</a>
+              </li>
+              <li>
+                <img src="img/icon_youtube.png" alt="YouTube" />
+                <a href="#">YouTube</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 共通フッター -->
+    <footer>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="program.html">PROGRAM</a></li>
+          <li><a href="location.html">LOCATION</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+      </nav>
+      <div class="social-links">
+        <a href="#"
+          ><img src="img/icon_facebook_footer.png" alt="Facebook"
+        /></a>
+        <a href="#"
+          ><img src="img/icon_instagram_footer.png" alt="Instagram"
+        /></a>
+        <a href="#"><img src="img/icon_youtube_footer.png" alt="YouTube" /></a>
+      </div>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Accessibility</a>
+      </div>
+      <p>&copy; 2025 Prime Gym. All Rights Reserved.</p>
+    </footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>
