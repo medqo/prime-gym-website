@@ -117,9 +117,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     const contactForm = document.getElementById("contactForm");
-    const contactSection = document.querySelector(".contact");
-    const contactTitle = contactSection.querySelector("h1");
-    const contactIntro = contactSection.querySelector("p");
+
+    const contactSection =
+        document.querySelector(".contact-section") ||
+        document.querySelector(".contact");
+
+    let contactTitle, contactIntro;
+    if (contactSection) {
+        contactTitle = contactSection.querySelector("h1");
+        contactIntro = contactSection.querySelector("p");
+    }
 
     if (contactForm) {
         contactForm.addEventListener("submit", function (e) {
@@ -139,10 +146,10 @@ document.addEventListener("DOMContentLoaded", function () {
             // サクセスメッセージ作成・挿入
             const successMessage = document.createElement("div");
             successMessage.innerHTML = `
-        <h2>お問い合わせありがとうございました。</h2>
-        <p>ご記入いただいた内容は無事送信されました。</p>
-        <a href="index.html">トップページに戻る</a>
-      `;
+      <h2>お問い合わせありがとうございました。</h2>
+      <p>ご記入いただいた内容は無事送信されました。</p>
+      <a href="index.html">トップページに戻る</a>
+    `;
             successMessage.classList.add("thanks-message");
             successMessage.style.textAlign = "center";
             successMessage.style.marginTop = "2rem";
@@ -171,4 +178,30 @@ document.addEventListener("DOMContentLoaded", function () {
             successBox.style.display = "block";
         });
     }
+
+    window.addEventListener("load", function () {
+        const loader = document.getElementById("loading-screen");
+        if (loader) {
+            loader.classList.add("fade-out");
+            // 完全に非表示にするには少し待つ
+            setTimeout(() => {
+                loader.style.display = "none";
+            }, 600); // CSSのtransitionと同じ時間
+        }
+    });
+
+    window.addEventListener("load", function () {
+        console.log("全リソース読み込み完了 - ローディング非表示処理開始");
+        const loader = document.getElementById("loading-screen");
+        if (loader) {
+            loader.classList.add("fade-out");
+            setTimeout(() => {
+                loader.style.display = "none";
+                console.log("ローディング画面を非表示にしました");
+            }, 600);
+        } else {
+            console.warn("ローディング画面の要素が見つかりません");
+        }
+    });
+
 });
