@@ -1,10 +1,10 @@
 # prime-gym-website
 
-このリポジトリは、情報工学の授業課題として作成した「Prime Gym」のWebサイトです。HTML・CSS・JavaScriptを用いて、ジムの紹介・プラン・アクセス・問い合わせ機能を備えた多ページ構成のレスポンシブサイトを制作しました。
+このリポジトリは、Webコンテンツの授業課題として作成した「Prime Gym」のWebサイトです。HTML・CSS・JavaScriptを用いて、ジムの紹介・プラン・アクセス・問い合わせ機能を備えた多ページ構成のレスポンシブサイトを制作しました。
 
 ---
 
-## 🔗 リンク
+## 🔗 デモ
 
 https://medqo.github.io/prime-gym-website/
 
